@@ -1,3 +1,3 @@
 # RockPaperScissor
 
-Simple Rock Paper Scissor games.
+Simple Rock Paper Scissor game.
