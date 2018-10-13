@@ -25,7 +25,7 @@ def checkWinner(userChoice, computerChoice):
         print("It's a tie")
     elif ((userChoice == "Rock" and computerChoice == "Scissor") or 
             (userChoice == "Paper" and computerChoice == "Rock") or   
-                (userChoice == "Scissor" and computerChoice == "Rock")):
+                (userChoice == "Scissor" and computerChoice == "Paper")):
         print("Damn the {} is tough! You win.".format(userChoice))
     else:
         print("Damn the {} is tough! Computer Wins.".format(computerChoice))
