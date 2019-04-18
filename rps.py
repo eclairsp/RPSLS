@@ -13,7 +13,7 @@ def game():
         userChoice = "Rock"
     elif userChoice == "P":
         userChoice = "Paper"
-    elif userChoice == "S"
+    elif userChoice == "S":
         userChoice = "Scissor"
     else:
         print(valid_keys)
