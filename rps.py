@@ -13,8 +13,10 @@ def game():
         userChoice = "Rock"
     elif userChoice == "P":
         userChoice = "Paper"
-    else:
+    elif userChoice == "S"
         userChoice = "Scissor"
+    else:
+        print(valid_keys)
 
     computerChoice = randomComputerChoice(1, 3)
     checkWinner(userChoice, computerChoice)
@@ -53,6 +55,8 @@ def gameStart():
     while True:
         if key == 13:
             game()
+        else:
+            print(valid_keys)
 
 def gameEnd():
     key = ord(getch())
@@ -60,10 +64,13 @@ def gameEnd():
         if key == 32:
             print("Come back later Senpai. Please!")
             exit()
+        else: 
+            print(valid_keys)
         
 def main():
     print("The clasic Rock, Paper, Scissor !")
     print("Press R for rock, P for paper, S for scissor, Q to quit")
+    global valid_keys = "R for rock, P for paper, S for scissor, Q to quit"
 
     #countdown at the start
     countdown()
