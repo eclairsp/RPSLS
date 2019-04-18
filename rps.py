@@ -2,7 +2,10 @@ from msvcrt import getch
 from random import randint
 from time import sleep
 
+valid_keys = "Press Enter to start, R for rock, P for paper, S for scissor, Q to quit"
+
 def game():
+    valid_keys
     #auto uppercase input
     userChoice = input(">").upper()
 
@@ -17,6 +20,7 @@ def game():
         userChoice = "Scissor"
     else:
         print(valid_keys)
+        gameStart()
 
     computerChoice = randomComputerChoice(1, 3)
     checkWinner(userChoice, computerChoice)
@@ -50,6 +54,7 @@ def countdown():
     print("Go.")
 
 def gameStart():
+    valid_keys
     print("Are you ready!! Press Enter")
     key = ord(getch())
     while True:
@@ -57,8 +62,10 @@ def gameStart():
             game()
         else:
             print(valid_keys)
+            gameStart()
 
 def gameEnd():
+    valid_keys
     key = ord(getch())
     while True:
         if key == 32:
@@ -66,11 +73,11 @@ def gameEnd():
             exit()
         else: 
             print(valid_keys)
+            gameStart()
         
 def main():
     print("The clasic Rock, Paper, Scissor !")
     print("Press R for rock, P for paper, S for scissor, Q to quit")
-    global valid_keys = "R for rock, P for paper, S for scissor, Q to quit"
 
     #countdown at the start
     countdown()
