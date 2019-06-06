@@ -1,4 +1,4 @@
-# **Rock****Paper**Scissor
+# **Rock Paper Scissor Lizard Spock**
 
 Simple Rock Paper Scissor Lizard Spock game.
 Rock Paper Scissors Lizard Spock is an extension of the classic game of chance, Rock Paper Scissors, created by Sam Kass and Karen Bryla.
@@ -12,13 +12,13 @@ It was popularised by The Big Bang Theory
 
 ### The rules for the game itslef
 
-**Scissors** ✌️ cuts **Paper** 📄, 
-**Paper** 📄 covers **Rock** ✊, 
-**Rock** ✊ crushes **Lizard** 🦎, 
-**Lizard** 🦎 poisons **Spock** 🖖🏼, 
-**Spock** 🖖🏼 smashes **Scissors** ✌️, 
-**Scissors** ✌️ decapitates **Lizard** 🦎, 
-**Lizard** 🦎 eats **Paper** 📄, 
-**Paper** 📄 disproves **Spock** 🖖🏼, 
-**Spock** 🖖🏼 vaporizes **Rock** ✊, 
-and as it always has, **Rock** ✊ crushes **Scissors** ✌️.
+**Scissors** ✌️ cuts **Paper** 📄,  <br />
+**Paper** 📄 covers **Rock** ✊,   <br />
+**Rock** ✊ crushes **Lizard** 🦎,  <br />
+**Lizard** 🦎 poisons **Spock** 🖖🏼,  <br />
+**Spock** 🖖🏼 smashes **Scissors** ✌️,  <br />
+**Scissors** ✌️ decapitates **Lizard** 🦎,  <br />
+**Lizard** 🦎 eats **Paper** 📄,  <br />
+**Paper** 📄 disproves **Spock** 🖖🏼,  <br />
+**Spock** 🖖🏼 vaporizes **Rock** ✊,  <br />
+and as it always has, **Rock** ✊ crushes **Scissors** ✌️.  <br />
