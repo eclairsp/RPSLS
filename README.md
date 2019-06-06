@@ -6,7 +6,7 @@ It was popularised by The Big Bang Theory.
 
 ## Rules for **RockPaperScissorLizardSpock** in **Web Game**
 
-# You can play the web game [here](https://rpsls.netlify.com/#%F0%9F%A6%8E)
+**You can play the web game [here](https://rpsls.netlify.com/#%F0%9F%A6%8E)**
 
 - Click on emoji on the "YOU" side to select your choice. 
 - The game is best of three.
@@ -14,13 +14,13 @@ It was popularised by The Big Bang Theory.
 
 ## Rules for **RockPaperScissorLizardSpock** in **Python**
 
-# The python file is in the repo named "rps.py"
-
 - You can select your choice using keyboard.
 - R for **Rock**, P for **Paper**, S for scissor, L for **Lizard**, K for **Spock**, Q to quit
 - You can use lowercase. No Problem!
 
-# Python Demo
+ **The python file is in the repo named "rps.py"**
+
+ **Python Demo**
 
 ```
 $ python rps.py
