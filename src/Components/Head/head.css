@@ -1,0 +1,40 @@
+.game-name {
+    width: 50vw;
+    padding: 20px;
+    margin-bottom: 20px;
+    justify-content: space-around;
+    display: flex;
+	background: #fff;
+	font-size: 2em;
+	border-radius: 20px;
+    text-align: center;
+}
+
+@media only screen and (min-width: 0) and (max-width: 370px) {
+
+    .game-name {
+        width: 80vw;
+        font-size: 1em;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 370px) and (max-width: 600px) {
+    
+    .game-name {
+        width: 80vw;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 1em;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    .game-name {
+        width: 80vw;
+        padding: 10px;
+        margin-bottom: 20px;
+        font-size: 1.5em;
+    }
+}
