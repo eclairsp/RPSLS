@@ -306,7 +306,7 @@ export default class Game extends React.Component {
                         <GameSec key="afte-win" className="game-winner">
                             {this.state.userScoreNum === 3 ? (
                                 <>
-                                    <h1>YOU WON</h1>
+                                    <h1>{this.state.name} WON</h1>
                                     <h1>{`${this.state.userScoreNum} : ${
                                         this.state.computerScoreNum
                                     }`}</h1>
