@@ -3,6 +3,7 @@ import posed, {PoseGroup} from "react-pose";
 import Head from "./../Head/Head";
 import GameBtns from "./../GameBtns/GameBtns";
 import Move from "./../Move/Move";
+import Rules from "./../Rules/Rules";
 import Emoji from "./Emoji";
 import "./game.css";
 
@@ -27,7 +28,8 @@ export default class Game extends React.Component {
             userScore: [false, false, false],
             computerScoreNum: 0,
             computerScore: [false, false, false],
-            message: "startmessage"
+            message: "startmessage",
+            showRules: false
         };
     }
 
@@ -144,7 +146,14 @@ export default class Game extends React.Component {
             userScore: [false, false, false],
             computerScoreNum: 0,
             computerScore: [false, false, false],
-            message: "startmessage"
+            message: "startmessage",
+            showrules: false
+        });
+    };
+
+    toggleRules = () => {
+        this.setState({
+            showRules: !this.state.showRules
         });
     };
 
@@ -282,6 +291,13 @@ export default class Game extends React.Component {
                     )}
                 </PoseGroup>
 
+                <>
+                    <Rules
+                        open={this.state.showRules}
+                        close={this.toggleRules}
+                    />
+                </>
+
                 <Move
                     msg={
                         !(
@@ -292,7 +308,7 @@ export default class Game extends React.Component {
                             : this.state.message
                     }
                 />
-                <GameBtns reset={this.doReset} />
+                <GameBtns reset={this.doReset} rules={this.toggleRules} />
             </>
         );
     }
