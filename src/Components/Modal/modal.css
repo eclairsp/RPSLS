@@ -1,4 +1,4 @@
-.rules-modal {
+.modal {
     position: absolute;
     background: rgba(0, 0, 0, 0.8);
     width: 100vw;
@@ -12,7 +12,7 @@
     flex-direction: column;
 }
 
-.rules {
+.modal-content {
     position: relative;
     background: #101010;
     width: max-content;
@@ -22,6 +22,10 @@
     padding: 20px;
     overflow-x: auto;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 }
 
 .rules-close-btn {
@@ -35,7 +39,7 @@
     cursor: pointer;
 }
 
-.rules-head {
+.modal-head {
     margin: 20px;
     font-size: 2em;
 }
@@ -50,18 +54,27 @@
     margin: 10px;
 }
 
+.name-input {
+    background: none;
+    border: 4px solid #ff5252;
+    padding: 20px;
+    font-size: 1.5em;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
 @media only screen and (min-width: 0) and (max-width: 600px) {
 
-    .rules {
+    .modal-content {
         border-radius: 10px;
         padding: 10px;
         width: 80vw;
-        height: 90vh;
+        max-height: 90vh;
         overflow-x: auto;
         overflow-y: auto;
     }
 
-    .rules-head {
+    .modal-head {
         font-size: 1.5em;
     }
 

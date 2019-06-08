@@ -3,7 +3,7 @@ import posed, {PoseGroup} from "react-pose";
 import Head from "./../Head/Head";
 import GameBtns from "./../GameBtns/GameBtns";
 import Move from "./../Move/Move";
-import Rules from "./../Rules/Rules";
+import Modal from "./../Modal/Modal";
 import Emoji from "./Emoji";
 import "./game.css";
 
@@ -15,11 +15,25 @@ const GameSec = posed.section({
     }
 });
 
+const Reset = props => (
+    <svg
+        className="spin"
+        fill={props.color}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+    >
+        <path d="M433 288.8c-7.7 0-14.3 5.9-14.9 13.6-6.9 83.1-76.8 147.9-161.8 147.9-89.5 0-162.4-72.4-162.4-161.4 0-87.6 70.6-159.2 158.2-161.4 2.3-.1 4.1 1.7 4.1 4v50.3c0 12.6 13.9 20.2 24.6 13.5L377 128c10-6.3 10-20.8 0-27.1l-96.1-66.4c-10.7-6.7-24.6.9-24.6 13.5v45.7c0 2.2-1.7 4-3.9 4C148 99.8 64 184.6 64 288.9 64 394.5 150.1 480 256.3 480c100.8 0 183.4-76.7 191.6-175.1.8-8.7-6.2-16.1-14.9-16.1z" />
+    </svg>
+);
+
 export default class Game extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
+            name: localStorage.getItem("name")
+                ? localStorage.getItem("name")
+                : "YOU",
             userSelection: null,
             computerSelection: null,
             shuffler: [1, 2, 4, 5],
@@ -29,7 +43,8 @@ export default class Game extends React.Component {
             computerScoreNum: 0,
             computerScore: [false, false, false],
             message: "startmessage",
-            showRules: false
+            showRules: false,
+            showChangeName: false
         };
     }
 
@@ -147,7 +162,8 @@ export default class Game extends React.Component {
             computerScoreNum: 0,
             computerScore: [false, false, false],
             message: "startmessage",
-            showrules: false
+            showRules: false,
+            showChangeName: false
         });
     };
 
@@ -155,6 +171,25 @@ export default class Game extends React.Component {
         this.setState({
             showRules: !this.state.showRules
         });
+    };
+
+    toggleChangeName = () => {
+        this.setState({
+            showChangeName: !this.state.showChangeName
+        });
+    };
+
+    inputNameChange = e => {
+        this.setState({
+            name: e.target.value
+        });
+    };
+
+    submitName = () => {
+        this.setState({
+            showChangeName: !this.state.showChangeName
+        });
+        localStorage.setItem("name", this.state.name);
     };
 
     render() {
@@ -167,7 +202,10 @@ export default class Game extends React.Component {
                         this.state.computerScoreNum < 3 && (
                             <GameSec key="actual-game" className="game">
                                 <section className="control-section user-section">
-                                    <h1> YOU </h1>
+                                    <h1 className="player-name">
+                                        {" "}
+                                        {this.state.name}{" "}
+                                    </h1>
                                     <header className="score">
                                         {this.state.userScore.map(
                                             (val, index) => {
@@ -217,7 +255,7 @@ export default class Game extends React.Component {
                                 <h1 className="middle-section">V/S</h1>
 
                                 <section className="control-section computer-section">
-                                    <h1> COMPUTER </h1>
+                                    <h1 className="player-name"> COMPUTER </h1>
                                     <header className="score">
                                         {this.state.computerScore.map(
                                             (val, index) => {
@@ -285,17 +323,169 @@ export default class Game extends React.Component {
                                 onClick={() => this.doReset()}
                                 className="game-help-btn"
                             >
-                                Replay
+                                <Reset color="white" />
                             </button>
                         </GameSec>
                     )}
                 </PoseGroup>
 
                 <>
-                    <Rules
-                        open={this.state.showRules}
-                        close={this.toggleRules}
-                    />
+                    <Modal open={this.state.showRules} close={this.toggleRules}>
+                        <h1 className="modal-head">How to play?</h1>
+                        <ul className="rules-list">
+                            <li className="rules-list-item">
+                                Click on the emoji on your side to choose it.
+                            </li>
+                            <li className="rules-list-item">
+                                The game is best of three. First to three points
+                                wins
+                            </li>
+                            <li className="rules-list-item">
+                                Every time the player wins the circle at top
+                                turn green.
+                            </li>
+                            <li className="rules-list-item">
+                                you can view the outcome below the game window
+                                in the white block.
+                            </li>
+                        </ul>
+                        <h1 className="modal-head">Game rules</h1>
+                        <ul className="rules-list">
+                            <li className="rules-list-item">
+                                Scissors{" "}
+                                <span role="img" aria-label="scissor">
+                                    ✂️
+                                </span>{" "}
+                                cuts Paper{" "}
+                                <span role="img" aria-label="paper">
+                                    📄
+                                </span>
+                                ,
+                            </li>
+                            <li className="rules-list-item">
+                                Paper{" "}
+                                <span role="img" aria-label="paper">
+                                    📄
+                                </span>{" "}
+                                covers Rock{" "}
+                                <span role="img" aria-label="rock">
+                                    ✊
+                                </span>
+                                ,
+                            </li>
+                            <li className="rules-list-item">
+                                Rock{" "}
+                                <span role="img" aria-label="rock">
+                                    ✊
+                                </span>{" "}
+                                crushes Lizard{" "}
+                                <span role="img" aria-label="lizard">
+                                    🦎
+                                </span>
+                                ,
+                            </li>
+                            <li className="rules-list-item">
+                                Lizard{" "}
+                                <span role="img" aria-label="lizard">
+                                    🦎
+                                </span>{" "}
+                                poisons Spock{" "}
+                                <span role="img" aria-label="spock">
+                                    🖖
+                                </span>
+                                ,
+                            </li>
+                            <li className="rules-list-item">
+                                Spock{" "}
+                                <span role="img" aria-label="spock">
+                                    🖖
+                                </span>{" "}
+                                smashes Scissors{" "}
+                                <span role="img" aria-label="scissor">
+                                    ✂️
+                                </span>
+                                ,
+                            </li>
+                            <li className="rules-list-item">
+                                Scissors{" "}
+                                <span role="img" aria-label="scissor">
+                                    ✂️
+                                </span>{" "}
+                                decapitates Lizard{" "}
+                                <span role="img" aria-label="lizard">
+                                    🦎
+                                </span>
+                                ,
+                            </li>
+                            <li className="rules-list-item">
+                                Lizard{" "}
+                                <span role="img" aria-label="lizard">
+                                    🦎
+                                </span>{" "}
+                                eats Paper{" "}
+                                <span role="img" aria-label="paper">
+                                    📄
+                                </span>
+                                ,
+                            </li>
+                            <li className="rules-list-item">
+                                Paper{" "}
+                                <span role="img" aria-label="paper">
+                                    📄
+                                </span>{" "}
+                                disproves Spock{" "}
+                                <span role="img" aria-label="spock">
+                                    🖖
+                                </span>
+                                ,
+                            </li>
+                            <li className="rules-list-item">
+                                Spock{" "}
+                                <span role="img" aria-label="spock">
+                                    🖖
+                                </span>{" "}
+                                vaporizes Rock{" "}
+                                <span role="img" aria-label="rock">
+                                    ✊
+                                </span>
+                                ,
+                            </li>
+                            <li className="rules-list-item">
+                                and as it always has, Rock{" "}
+                                <span role="img" aria-label="rock">
+                                    ✊
+                                </span>{" "}
+                                crushes Scissors{" "}
+                                <span role="img" aria-label="scissor">
+                                    ✂️
+                                </span>
+                                .
+                            </li>
+                        </ul>
+                    </Modal>
+                </>
+
+                <>
+                    <Modal
+                        open={this.state.showChangeName}
+                        close={this.toggleChangeName}
+                    >
+                        <h1 className="modal-head">Change name</h1>
+                        <input
+                            className="name-input"
+                            type="text"
+                            placeholder="Type the name ..."
+                            onChange={e => this.inputNameChange(e)}
+                        />
+                        <button
+                            onClick={() => {
+                                this.submitName();
+                            }}
+                            className="game-help-btn name-btn"
+                        >
+                            Change
+                        </button>
+                    </Modal>
                 </>
 
                 <Move
@@ -307,8 +497,13 @@ export default class Game extends React.Component {
                             ? "endmessage"
                             : this.state.message
                     }
+                    name={this.state.name}
                 />
-                <GameBtns reset={this.doReset} rules={this.toggleRules} />
+                <GameBtns
+                    reset={this.doReset}
+                    rules={this.toggleRules}
+                    changeName={this.toggleChangeName}
+                />
             </>
         );
     }

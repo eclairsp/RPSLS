@@ -1,18 +1,21 @@
 .game-help-btn-wrapper {
     width: 50vw;
-    padding: 20px;
     justify-content: space-between;
     display: flex;
 }
 
 .game-help-btn {
-    padding: 10px;
     border: none;
-    background: white;
+    background: none;
     border-radius: 10px;
     font-size: 1.5em;
     margin: 0;
     cursor: pointer;
+}
+
+.name-btn {
+    background-color: white;
+    padding: 10px;
 }
 
 @media only screen and (min-width: 0) and (max-width: 370px) {
@@ -23,7 +26,7 @@
 
     .game-help-btn {
         font-size: 1em;
-        padding: 10px;
+        height: max-content;
     }
 }
 
@@ -34,7 +37,7 @@
 
     .game-help-btn {
         font-size: 1em;
-        padding: 10px;
+        padding: 5px;
     }
 }
 

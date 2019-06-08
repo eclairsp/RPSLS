@@ -11,7 +11,7 @@ const Messages = {
     RS: "Rock crushes Scissor",
     Tie: "Its a TIE!",
     startmessage: "Click on emoji on YOU side to start",
-    endmessage: "✊📄✂️🦎🖖GAME OVER🖖🦎✂️📄✊"
+    endmessage: "GAME OVER"
 };
 
 export default Messages;

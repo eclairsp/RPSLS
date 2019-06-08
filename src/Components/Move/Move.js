@@ -2,8 +2,14 @@ import React from "react";
 import Messages from "./Messages";
 import "./move.css";
 
-const Move = props => {
-    return <section className="move-wrapper">{Messages[props.msg]}</section>;
+const Move = ({msg, name}) => {
+    return (
+        <section className="move-wrapper">
+            {msg === "startmessage"
+                ? Messages[msg].replace("YOU", name)
+                : Messages[msg]}
+        </section>
+    );
 };
 
 export default Move;
