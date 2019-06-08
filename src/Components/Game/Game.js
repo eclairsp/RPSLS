@@ -21,6 +21,7 @@ export default class Game extends React.Component {
         this.state = {
             userSelection: null,
             computerSelection: null,
+            shuffler: [1, 2, 4, 5],
             chances: 1,
             userScoreNum: 0,
             userScore: [false, false, false],
@@ -31,6 +32,8 @@ export default class Game extends React.Component {
     }
 
     componentDidMount() {
+        // changes URL with new emoji every .5s
+
         var emojiURL = ["✊", "📄", "✂️", "🦎", "🖖"];
 
         setInterval(() => {
