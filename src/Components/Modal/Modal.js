@@ -10,6 +10,7 @@ const Modal = ({children, open, close}) => {
                       <button
                           className="rules-close-btn"
                           onClick={() => close()}
+                          aria-label="Close name change or rules."
                       >
                           X
                       </button>

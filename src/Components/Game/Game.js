@@ -306,22 +306,23 @@ export default class Game extends React.Component {
                         <GameSec key="afte-win" className="game-winner">
                             {this.state.userScoreNum === 3 ? (
                                 <>
-                                    <h1 className="result-text">{this.state.name} WON</h1>
-                                    <h1 className="result-text">{`${this.state.userScoreNum} : ${
-                                        this.state.computerScoreNum
-                                    }`}</h1>
+                                    <h1 className="result-text">
+                                        {this.state.name} WON
+                                    </h1>
+                                    <h1 className="result-text">{`${this.state.userScoreNum} : ${this.state.computerScoreNum}`}</h1>
                                 </>
                             ) : (
                                 <>
-                                    <h1 className="result-text">COMPUTER WON</h1>
-                                    <h1 className="result-text">{`${this.state.computerScoreNum} : ${
-                                        this.state.userScoreNum
-                                    }`}</h1>
+                                    <h1 className="result-text">
+                                        COMPUTER WON
+                                    </h1>
+                                    <h1 className="result-text">{`${this.state.computerScoreNum} : ${this.state.userScoreNum}`}</h1>
                                 </>
                             )}
                             <button
                                 onClick={() => this.doReset()}
                                 className="game-help-btn"
+                                aria-label="Reset game."
                             >
                                 <Reset color="white" />
                             </button>
@@ -482,6 +483,7 @@ export default class Game extends React.Component {
                                 this.submitName();
                             }}
                             className="game-help-btn name-btn"
+                            aria-label="Change name."
                         >
                             Change
                         </button>
