@@ -4,6 +4,8 @@ Simple Rock Paper Scissor Lizard Spock game.
 Rock Paper Scissors Lizard Spock is an extension of the classic game of chance, Rock Paper Scissors, created by Sam Kass and Karen Bryla.
 It was popularised by The Big Bang Theory.
 
+![RPSLS](https://github.com/eclairsp/RPSLS/blob/master/rps.png)
+
 ## Rules for **RockPaperScissorLizardSpock** in **Web Game**
 
 **You can play the web game [here](https://rpsls.netlify.com/#%F0%9F%A6%8E)**
